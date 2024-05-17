@@ -12,7 +12,7 @@ import organizationReducer, {
 import data from "../../src/data/data.js";
 
 describe("organizationReducer", () => {
-  // Mock initial state for testing
+  
   const initialState = { ...data };
 
   it("should handle moving a team member to another team", () => {
@@ -74,5 +74,5 @@ describe("organizationReducer", () => {
     );
   });
 
-  // Add test cases for the remaining reducer actions...
+  
 });
