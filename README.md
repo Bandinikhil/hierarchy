@@ -10,7 +10,7 @@ For each employee, the following details are stored:
 - Phone Number
 - Email ID
 
-## Functionality
+## Functionality added
 
 1. Display the position name with the employee name.
 2. Add a new team member.
@@ -20,7 +20,7 @@ For each employee, the following details are stored:
 6. Create a new team or edit an existing one.
 7. Filter employees by name, phone number, or email ID.
 
-## Bonus Functionalities
+## Bonus Functionalities added
 
 1. Ensure two teams cannot have the same name.
 2. Select a team/head and view all employees under them.
@@ -43,3 +43,7 @@ Data is stored locally in the browser, mimicking database persistence. Reopening
    ```bash
    git clone https://github.com/your-username/hierarchy-ui.git
    cd hierarchy-ui
+
+   2. npm install
+
+   3. npm run dev
