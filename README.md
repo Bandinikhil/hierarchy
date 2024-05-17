@@ -2,6 +2,11 @@
 
 [Hierarchy WebApp Link](https://hierarchyy.netlify.app/)
 
+## Screenshot
+
+![Screenshot (349)](https://github.com/Bandinikhil/hierarchy/assets/105233916/bb554703-4971-4dd9-a46d-d961a4cace2e)
+
+
 ## Employee Details
 
 For each employee, the following details are stored:
@@ -41,7 +46,7 @@ Data is stored locally in the browser, mimicking database persistence. Reopening
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/hierarchy-ui.git
+   git clone https://github.com/Bandinikhil/hierarchy.git
    cd hierarchy-ui
 
    2. npm install
