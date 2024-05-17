@@ -19,23 +19,3 @@ const FilteredEmployeeList = ({ filteredData }) => {
 export default FilteredEmployeeList;
 
 
-
-// import React from 'react';
-
-// const FilteredEmployeeList = ({ filteredData }) => {
-//   return (
-//     <div className="filtered-employee-list">
-//       <h2>Filtered Employees</h2>
-//       {filteredData?.map(employee => (
-//         <div key={employee.id}>
-//           <p>Name: {employee.name}</p>
-//           <p>Position: {employee.position}</p>
-//           <p>Phone: {employee.phone}</p>
-//           <p>Email: {employee.email}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default FilteredEmployeeList;

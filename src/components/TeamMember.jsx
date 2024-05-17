@@ -30,19 +30,6 @@ const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhigh
     dispatch(promoteEmployee({ departmentId, teamId: currentTeamId, teamMemberId: id }));
   };
 
-  // const handleCreateOrUpdateTeam = () => {
-  //   if (isEditingTeam) {
-  //     // Edit existing team
-  //     dispatch(editTeam({ departmentId, teamId: currentTeamId, updatedTeam: { id: currentTeamId, name: teamName } }));
-  //   } else {
-  //     // Create new team
-  //     const newTeamId = `NEW_TEAM_${Date.now()}`;
-  //     dispatch(addTeam({ departmentId, team: { id: newTeamId, name: teamName, teamLeader: { /* Add team leader details here */ }, teamMembers: [] } }));
-  //   }
-  //   setIsEditingTeam(false);
-  //   setTeamName('');
-  // };
-
   return (
     <div className="ml-8 mt-4">
       <div className='flex flex-row items-center gap-x-2'>
@@ -87,23 +74,7 @@ const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhigh
           {isEditingTeam ? 'Update Team' : 'Create Team'}
         </button> */}
       </div>
-      {/* {isEditingTeam && (
-        <div className="mt-4">
-          <input
-            type="text"
-            className="border border-gray-300 rounded-md p-2"
-            placeholder="Enter team name"
-            value={teamName}
-            onChange={(e) => setTeamName(e.target.value)}
-          />
-          <button
-            className="mt-2 px-3 py-1 bg-blue-500 border border-blue-500 rounded-md text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
-            onClick={handleCreateOrUpdateTeam}
-          >
-            {isEditingTeam ? 'Update Team' : 'Create Team'}
-          </button>
-        </div>
-      )} */}
+      
       {isMovingMember && (
         <MoveTeamMemberForm
           departmentId={departmentId}
@@ -121,49 +92,5 @@ export default TeamMember;
 
 
 
-// import React, { useState } from 'react';
-// import MoveTeamMemberForm from './MoveTeamMemberForm';
-
-// const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhighlighted, highlighted }) => {
-//   const [isMovingMember, setIsMovingMember] = useState(false);
-//   const { id, name, position, phone, email } = data;
-
-//   return (
-//     <div className="ml-8 mt-4">
-//       <div className='flex flex-row items-center gap-x-2'>
-//      <div className={` ${(hodhighlighted || highlighted || ceoHighlighted) ? 'bg-blue-100' : ''} transition-all duration-300 ease-in-out flex rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center w-52  border border-gray-300 `}>
-//       <div className='rounded-full border border-gray-300 p-2'>
-//         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-//           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-//         </svg>
-//         </div>
-//         <div className="flex flex-col px-3  ">
-//         <div className='text-black text-lg font-semibold truncate text-wrap'>{name}</div>
-//         <div className='text-base text-gray-500 font-medium truncate text-wrap'>{position}</div>
-//         </div>
-      
-      
-//       </div>
-//       <button
-//           className="mt-2 px-3 py-1 bg-blue-500 border border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
-//           onClick={() => setIsMovingMember(true)}
-//         >
-//           Move
-//         </button>
-//         </div>
-//       {/* div */}
-//       {isMovingMember && (
-//         <MoveTeamMemberForm
-//           departmentId={departmentId}
-//           currentTeamId={currentTeamId}
-//           teamMemberId={id}
-//           onClose={() => setIsMovingMember(false)}
-//         />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default TeamMember;
 
 
