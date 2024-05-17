@@ -33,7 +33,7 @@ const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhigh
   return (
     <div className="ml-8 mt-4">
       <div className='flex flex-row items-center gap-x-2'>
-        <div className={` ${(hodhighlighted || highlighted || ceoHighlighted) ? 'bg-blue-100' : ''} cursor-pointer transition-all duration-300 ease-in-out flex rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center w-52  border border-gray-300 `}
+        <div className={` ${(hodhighlighted || highlighted || ceoHighlighted) ? 'bg-blue-100' : ''} line-clamp-1 whitespace-nowrap cursor-pointer transition-all duration-300 ease-in-out flex rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center w-52  border border-gray-300 `}
         onClick={handleOpenModal}
         >
           <div className='rounded-full border border-gray-300 p-2'>
@@ -50,19 +50,19 @@ const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhigh
         <UpdateEmployeeModal employee={data} onClose={handleCloseModal} />
       )}
         <button
-          className="mt-2 px-3 py-1 bg-blue-500 border border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
+          className="mt-2 px-3 py-1 line-clamp-1 whitespace-nowrap bg-blue-500 border border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
           onClick={() => setIsMovingMember(true)}
         >
           Move
         </button>
         <button
-          className="mt-2 px-2 py-1 bg-red-500 border border-red-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-red-500"
+          className="mt-2 px-2 py-1 line-clamp-1 whitespace-nowrap bg-red-500 border border-red-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-red-500"
           onClick={handleRemove}
         >
           Remove
         </button>
         <button
-          className="mt-2 px-2 py-1 bg-green-500 border border-green-500 rounded-r-full rounded-l-full text-white hover:bg-white hover:text-green-500"
+          className="mt-2 px-2 py-1 line-clamp-1 whitespace-nowrap bg-green-500 border border-green-500 rounded-r-full rounded-l-full text-white hover:bg-white hover:text-green-500"
           onClick={handlePromote}
         >
           Promote

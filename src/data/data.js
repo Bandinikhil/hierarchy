@@ -71,7 +71,7 @@ const data = {
         teams: [
           {
             id: "ENG001_T1",
-            name: "Team",
+            name: "Team Engg",
             teamLeader: {
               position: "Team Leader",
               name: "Prakash Sharma",
@@ -100,7 +100,7 @@ const data = {
         teams: [
           {
             id: "DES001_T1",
-            name: "Team",
+            name: "Team UX",
             teamLeader: {
               position: "Team Leader",
               name: "Neha Patel",

@@ -36,7 +36,7 @@ const HeadOfDepartment = ({ data ,ceoHighlighted, departmentId}) => {
   return (
     <div className={`ml-8 mt-4 border-l border-gray-300 transition-all duration-300 ease-in-out pl-4 ${highlighted ? 'bg-gray-100' : ''}`} >
       <div className='flex flex-row items-center gap-x-2'>
-      <div className={` ${ceoHighlighted ? 'bg-blue-100' : ''} cursor-pointer transition-all duration-300 ease-in-out flex rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center w-56  border border-gray-300 `}
+      <div className={` ${ceoHighlighted ? 'bg-blue-100' : ''}  cursor-pointer transition-all line-clamp-1 whitespace-nowrap duration-300 ease-in-out flex rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center min-w-56  border border-gray-300 `}
       onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
       onClick={handleOpenModal}
       >
@@ -46,18 +46,20 @@ const HeadOfDepartment = ({ data ,ceoHighlighted, departmentId}) => {
         </svg>
         </div>
         <div className="flex flex-col px-3 ">
-        <div className='text-black text-lg font-semibold text-wrap truncate'>{name}</div>
+        <div className='text-black text-lg line-clamp-1 whitespace-nowrap font-semibold text-wrap truncate'>{name}</div>
         <div className='text-base text-gray-500 font-medium text-wrap truncate'>{position}</div>
         </div>
        
       </div>
-      <button
-  className="mt-2 px-3 py-1 bg-blue-500 border border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
+      
+
+</div>
+<button
+  className="mt-2 px-3 py-1 line-clamp-1 overflow-auto whitespace-nowrap items-center bg-blue-500 border  border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
   onClick={() => setIsAddingTeam(true)}
 >
   Add Team
 </button>
-</div>
       {/* <button onClick={() => setIsAddingTeam(true)}>Add Team</button> */}
       {showModal && (
         <UpdateEmployeeModal employee={data} onClose={handleCloseModal} />

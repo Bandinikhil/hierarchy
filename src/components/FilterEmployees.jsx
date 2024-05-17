@@ -37,7 +37,7 @@ const FilterEmployees = ({ onFilter }) => {
         value={searchTerm}
         onChange={handleSearch}
         placeholder="Search Employee"
-        className="md:px-3 px-2 py-1 md:py-2 w-[80%] md:w-1/3 lg:w-1/5 bg-gray-100 border border-gray-300 rounded-l-full focus:outline-none focus:ring focus:border-blue-300"
+        className="md:px-3 px-2 py-1 md:py-2 w-[70%] md:w-1/3 lg:w-1/5 bg-gray-100 border border-gray-300 rounded-l-full focus:outline-none focus:ring focus:border-blue-300"
       />
       <button
         onClick={cancelFilter}

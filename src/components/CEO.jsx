@@ -30,7 +30,7 @@ const CEO = ({ data }) => {
 
   return (
     <div className="text-center ml-8 mt-4 border-l border-gray-300 pl-4 overflow-x-auto ">
-      <div className=" flex cursor-pointer rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center w-52  border border-gray-300 "
+      <div className=" flex cursor-pointer line-clamp-1 whitespace-nowrap rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center w-52  border border-gray-300 "
        onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
        onClick={handleOpenModal}
       >

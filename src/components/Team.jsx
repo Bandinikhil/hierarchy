@@ -34,14 +34,15 @@ const Team = ({ data, highlighted,ceoHighlighted,departmentId,onEditTeam }) => {
       
 
       {/* <button onClick={onEditTeam}>Edit Team</button> */}
-
+      <div className="flex items-center justify-center gap-2">
       <div className="ml-2 text-black text-lg font-semibold whitespace-nowrap">Team - {name}</div>
       <button
-  className="mt-2 px-3 py-1 items-center bg-blue-500 border whitespace-nowrap border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
+  className="mt-2 px-3 py-1 line-clamp-1 whitespace-nowrap items-center bg-blue-500 border  border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
   onClick={onEditTeam}
 >
   Edit Team
 </button>
+</div>
 </div>
       
     </div>

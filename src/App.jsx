@@ -14,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className='text-center my-2 font-bold text-3xl'>Organization Tree</h1>
       <FilterEmployees onFilter={handleFilter} />
       {filteredData ? (
         <FilteredEmployeeList filteredData={filteredData} />
