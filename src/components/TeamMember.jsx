@@ -14,6 +14,7 @@ const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhigh
   const dispatch = useDispatch();
   const { id, name, position, phone, email } = data;
 
+  // send details to remove the team member
   const handleRemove = () => {
     dispatch(removeTeamMember({ departmentId, teamId: currentTeamId, teamMemberId: id }));
   };
@@ -26,10 +27,12 @@ const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhigh
     setShowModal(false);
   };
 
+  //to promote team members to team leaders
   const handlePromote = () => {
     dispatch(promoteEmployee({ departmentId, teamId: currentTeamId, teamMemberId: id }));
   };
 
+  //rebders the team members data
   return (
     <div className="ml-8 mt-4">
       <div className='flex flex-row items-center gap-x-2'>
@@ -67,14 +70,10 @@ const TeamMember = ({ data, departmentId, currentTeamId, ceoHighlighted, hodhigh
         >
           Promote
         </button>
-        {/* <button
-          className="mt-2 px-3 py-1 bg-blue-500 border border-blue-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-blue-500"
-          onClick={() => setIsEditingTeam(true)}
-        >
-          {isEditingTeam ? 'Update Team' : 'Create Team'}
-        </button> */}
+        
       </div>
       
+      {/* //sending the required details of team members to move into another team */}
       {isMovingMember && (
         <MoveTeamMemberForm
           departmentId={departmentId}

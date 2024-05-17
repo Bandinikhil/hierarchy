@@ -20,6 +20,7 @@ const TeamLeader = ({ data, departmentId, hodhighlighted, ceoHighlighted, curren
     setShowModal(false);
   };
 
+  //To render the team leader and send the team member data as props to Teammember component
   return (
     <div className={`ml-8 mt-4 ${highlighted ? 'bg-gray-100' : ''}`} >
       <div className={`${hodhighlighted || ceoHighlighted ? 'bg-blue-100' : ''} line-clamp-1 whitespace-nowrap cursor-pointer flex rounded-r-full focus:bg-blue-300 focus:border-blue-500 rounded-l-full justify-between px-1 shadow-md items-center w-52 border border-gray-300`}
@@ -51,17 +52,13 @@ const TeamLeader = ({ data, departmentId, hodhighlighted, ceoHighlighted, curren
             highlighted={highlighted}
           />
         ))}
-        {/* <button
-          className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
-          onClick={() => setIsAddingMember(true)}
-        >
-          Add Team Member
-        </button> */}
+       
         <button
   className="mt-2 px-4 py-2 bg-green-500 border line-clamp-1 whitespace-nowrap border-green-500 rounded-r-full rounded-l-full text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-green-500"
    onClick={() => setIsAddingMember(true)} >
    Add Team Member
 </button>
+{/* Form to add new team member sending the required details as propd to form to add the member*/}
       </div>
       {isAddingMember && <AddTeamMemberForm departmentId={departmentId} teamId={currentTeamId} onClose={() => setIsAddingMember(false)} />}
     </div>

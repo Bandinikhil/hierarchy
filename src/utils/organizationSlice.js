@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import orgData from "../data/data";
 
+//taking data from local storage if not availabe taking the json data
 const storedData = localStorage.getItem("organizationData");
  
 const initialState = storedData ? JSON.parse(storedData) : orgData;
@@ -9,8 +10,10 @@ const organizationSlice = createSlice({
   name: "organization",
   initialState,
   reducers: {
+
+    // To add new team member reducer function to update the state based on the actions
     addTeamMember: (state, action) => {
-      //   const { departmentId, teamId, teamMember } = action.payload;
+      
       const { departmentId, teamId, teamMember } = action.payload;
       console.log("slicess", action.payload);
       console.log("dptId slice", departmentId, teamId, teamMember);
@@ -21,6 +24,7 @@ const organizationSlice = createSlice({
       localStorage.setItem("organizationData", JSON.stringify(state));
     },
 
+    // reducer function to move team member from team to anther team by destructuring actions which are passed
     moveTeamMember: (state, action) => {
       const { departmentId, currentTeamId, newTeamId, teamMemberId } =
         action.payload;
@@ -65,6 +69,7 @@ const organizationSlice = createSlice({
       localStorage.setItem("organizationData", JSON.stringify(state));
     },
 
+    //to remove the teamber and update the localStorage
     removeTeamMember: (state, action) => {
       const { departmentId, teamId, teamMemberId } = action.payload;
       const department = state.CEO.departments[departmentId];
@@ -128,6 +133,7 @@ const organizationSlice = createSlice({
       }
     },
 
+    // to add a new team member in the same department
     addTeam: (state, action) => {
       const { departmentId, team } = action.payload;
       const department = state.CEO.departments[departmentId];
@@ -145,6 +151,7 @@ const organizationSlice = createSlice({
       localStorage.setItem("organizationData", JSON.stringify(state));
     },
 
+    //to promote the team member to team leader and persist all other team members
     promoteEmployee: (state, action) => {
       const { departmentId, teamId, teamMemberId } = action.payload;
       const department = state.CEO.departments[departmentId];

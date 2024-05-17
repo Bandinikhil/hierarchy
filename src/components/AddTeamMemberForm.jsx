@@ -1,35 +1,39 @@
-
-
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTeamMember } from '../utils/organizationSlice';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTeamMember } from "../utils/organizationSlice";
 
 const AddTeamMemberForm = ({ departmentId, teamId, onClose }) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const dispatch = useDispatch();
 
+  // on submit dispatch the new team member details
   const handleAddTeamMember = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
     const newTeamMember = {
       id: `TM${Date.now()}`,
       name,
       phone,
       email,
-      position: 'Team Member',
+      position: "Team Member"
     };
-    dispatch(addTeamMember({ departmentId, teamId, teamMember: newTeamMember }));
+    dispatch(
+      addTeamMember({ departmentId, teamId, teamMember: newTeamMember })
+    );
     onClose();
   };
 
+  //form to add the new team member
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
       <div className="bg-white p-4 w-[80%] md:w-1/2 lg:w-1/3 rounded shadow-md">
         <h2 className="text-lg font-bold mb-4">Add New Team Member</h2>
         <form onSubmit={handleAddTeamMember}>
           <div className="mb-2">
-            <label className="block text-sm font-medium" htmlFor="name">Name</label>
+            <label className="block text-sm font-medium" htmlFor="name">
+              Name
+            </label>
             <input
               id="name"
               type="text"
@@ -40,7 +44,9 @@ const AddTeamMemberForm = ({ departmentId, teamId, onClose }) => {
             />
           </div>
           <div className="mb-2">
-            <label className="block text-sm font-medium" htmlFor="phone">Phone</label>
+            <label className="block text-sm font-medium" htmlFor="phone">
+              Phone
+            </label>
             <input
               id="phone"
               type="text"
@@ -51,7 +57,9 @@ const AddTeamMemberForm = ({ departmentId, teamId, onClose }) => {
             />
           </div>
           <div className="mb-2">
-            <label className="block text-sm font-medium" htmlFor="email">Email</label>
+            <label className="block text-sm font-medium" htmlFor="email">
+              Email
+            </label>
             <input
               id="email"
               type="email"

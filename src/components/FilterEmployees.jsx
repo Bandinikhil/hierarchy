@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import data from '../data/data'; // Import your JSON data
+import React, { useState } from "react";
+import data from "../data/data"; // Import your JSON data
 
 const FilterEmployees = ({ onFilter }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [isFiltering, setIsFiltering] = useState(false);
 
   const handleSearch = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
 
-    // Check if data is available in localStorage, otherwise use default data
-    const jsonData = localStorage.getItem('organizationData');
+    // Check if data is available in localStorage, oeelse use default data
+    const jsonData = localStorage.getItem("organizationData");
     const orgData = jsonData ? JSON.parse(jsonData) : data;
 
-    if (term.trim() === '') {
+    if (term.trim() === "") {
       setIsFiltering(false); // Reset filter if search term is empty
       onFilter(null); // No filtering, pass null
     } else {
@@ -26,7 +26,7 @@ const FilterEmployees = ({ onFilter }) => {
 
   const cancelFilter = () => {
     setIsFiltering(false);
-    setSearchTerm('');
+    setSearchTerm("");
     onFilter(null); // Cancel the filter, pass null
   };
 
@@ -96,4 +96,3 @@ const matchesSearchTerm = (value, term) =>
   );
 
 export default FilterEmployees;
-
