@@ -2,6 +2,10 @@
 
 [Hierarchy WebApp Link](https://hierarchyy.netlify.app/)
 
+
+![image](https://github.com/Bandinikhil/hierarchy/assets/105233916/509e5462-6660-46ab-a79e-8e7d95924344)
+
+
 ## Screenshot
 
 ![Screenshot (349)](https://github.com/Bandinikhil/hierarchy/assets/105233916/bb554703-4971-4dd9-a46d-d961a4cace2e)
